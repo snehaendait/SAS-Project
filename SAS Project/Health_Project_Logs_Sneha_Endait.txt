@@ -1,0 +1,727 @@
+
+/* 6a - Logs */
+2    libname health excel "W:\My Documents\My SAS Files\Microsoft_Health_20150418_20150831.xls";
+NOTE: Libref HEALTH was successfully assigned as follows:
+      Engine:        EXCEL
+      Physical Name: W:\My Documents\My SAS Files\Microsoft_Health_20150418_20150831.xls
+
+
+/* 6b - Logs */
+NOTE: WORK.ACTIVITY data set was successfully created.
+NOTE: The data set WORK.ACTIVITY has 80 observations and 50 variables.
+
+/* 6c - Logs */
+NOTE: File "W:\My Documents\SAS Project\exported.xls" will be created if the export process
+      succeeds.
+NOTE: "activity" table was successfully created.
+
+
+/* 6d - Logs */
+19   libname health clear;
+NOTE: Libref HEALTH has been deassigned.
+
+/* 8a - Logs */
+695  data health.activity; /* 8a */
+696      length Event_Type   $10. Cardio_Benefit $12. Sleep_Restoration $8. Sleep_Auto_Detect
+696! $6. ;
+697      infile "W:\My Documents\SAS Project\Activity.csv" dlm=',' dsd missover;
+698      input Input_Date :mmddyy9. Start_Time :time. Event_Type Duration_Seconds
+698! Seconds_Paused  Calories_Burned
+699            Calories_Burned_Carbs Calories_Burned_Fats    HR_Lowest   HR_Peak HR_Average
+700            UV_Exposure_Minutes   Total_Kilometers_Moved  Cardio_Benefit  Minutes_Under_50_HR
+701            Minutes_In_HRZ_Very_Light_50_60   Minutes_In_HRZ_Light_60_70
+702            Minutes_In_HRZ_Moderate_70_80 Minutes_In_HRZ_Hard_80_90
+702! Minutes_In_HRZ_Very_Hard_90_Plus
+703            HR_Finish HR_Recovery_Rate_1_Min  HR_Recovery_Rate_2_Min  Recovery_Time_Seconds
+703!  Bike_Average_KPH
+704            Bike_Max_KPH  Elevation_Highest_Meters    Elevation_Lowest_Meters
+704! Elevation_Gain_Meters
+705            Elevation_Loss_Meters Wake_Up_Time :MDYAMPM20.2   Seconds_Awake
+705! Seconds_Asleep_Total    Seconds_Asleep_Restful
+706            Seconds_Asleep_Light  Wake_Ups    Seconds_to_Fall_Asleep  Sleep_Efficiency
+706! Sleep_Restoration
+707            Sleep_HR_Resting  Sleep_Auto_Detect   GW_Plan_Name    GW_Reps_Performed
+707! GW_Rounds_Performed
+708            Golf_Course_Name  Golf_Course_Par Golf_Total_Score    Golf_Par_or_Better
+708! Golf_Pace_of_Play_Minutes
+709            Golf_Longest_Drive_Yards;
+710  run;
+
+NOTE: The infile "W:\My Documents\SAS Project\Activity.csv" is:
+      Filename=W:\My Documents\SAS Project\Activity.csv,
+      RECFM=V,LRECL=32767,File Size (bytes)=9297,
+      Last Modified=14Dec2015:15:45:29,
+      Create Time=14Dec2015:13:04:30
+
+NOTE: 80 records were read from the infile "W:\My Documents\SAS Project\Activity.csv".
+      The minimum record length was 80.
+      The maximum record length was 134.
+NOTE: The data set HEALTH.ACTIVITY has 80 observations and 50 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.01 seconds
+
+
+/* 8b - Logs */
+711  data health.activity; /* 8b */
+712      length Event_Type   $10. Cardio_Benefit $12. Sleep_Restoration $8. Sleep_Auto_Detect
+712! $6. ;
+713      infile "W:\My Documents\SAS Project\Activity.csv" dlm=',' dsd missover;
+714      input Input_Date :mmddyy9. Start_Time :time. Event_Type :$10.   Duration_Seconds :7.
+714! Seconds_Paused Calories_Burned
+715            Calories_Burned_Carbs Calories_Burned_Fats    HR_Lowest   HR_Peak HR_Average
+716            UV_Exposure_Minutes   Total_Kilometers_Moved  Cardio_Benefit  Minutes_Under_50_HR
+717            Minutes_In_HRZ_Very_Light_50_60   Minutes_In_HRZ_Light_60_70
+718            Minutes_In_HRZ_Moderate_70_80 Minutes_In_HRZ_Hard_80_90
+718! Minutes_In_HRZ_Very_Hard_90_Plus
+719            HR_Finish HR_Recovery_Rate_1_Min  HR_Recovery_Rate_2_Min  Recovery_Time_Seconds
+719!  Bike_Average_KPH
+720            Bike_Max_KPH  Elevation_Highest_Meters    Elevation_Lowest_Meters
+720! Elevation_Gain_Meters
+721            Elevation_Loss_Meters Wake_Up_Time :MDYAMPM20.2   Seconds_Awake
+721! Seconds_Asleep_Total    Seconds_Asleep_Restful
+722            Seconds_Asleep_Light  Wake_Ups    Seconds_to_Fall_Asleep  Sleep_Efficiency
+722! Sleep_Restoration
+723            Sleep_HR_Resting  Sleep_Auto_Detect   GW_Plan_Name    GW_Reps_Performed
+723! GW_Rounds_Performed
+724            Golf_Course_Name  Golf_Course_Par Golf_Total_Score    Golf_Par_or_Better
+724! Golf_Pace_of_Play_Minutes
+725            Golf_Longest_Drive_Yards;
+726  run;
+
+NOTE: The infile "W:\My Documents\SAS Project\Activity.csv" is:
+      Filename=W:\My Documents\SAS Project\Activity.csv,
+      RECFM=V,LRECL=32767,File Size (bytes)=9297,
+      Last Modified=14Dec2015:15:45:29,
+      Create Time=14Dec2015:13:04:30
+
+NOTE: 80 records were read from the infile "W:\My Documents\SAS Project\Activity.csv".
+      The minimum record length was 80.
+      The maximum record length was 134.
+NOTE: The data set HEALTH.ACTIVITY has 80 observations and 50 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.00 seconds
+
+/* 8c - Logs */
+727  data health.activity; /* 8c */
+728      length Event_Type   $10. Cardio_Benefit $12. Sleep_Restoration $8. Sleep_Auto_Detect
+728! $6. ;
+729      infile "W:\My Documents\SAS Project\Activity.csv" dlm=',' dsd missover;
+730      input Input_Date :mmddyy9. Start_Time :time. Event_Type :$10.   Duration_Seconds :7.
+730! Seconds_Paused Calories_Burned
+731            Calories_Burned_Carbs Calories_Burned_Fats    HR_Lowest   HR_Peak HR_Average
+732            UV_Exposure_Minutes   Total_Kilometers_Moved  Cardio_Benefit  Minutes_Under_50_HR
+733            Minutes_In_HRZ_Very_Light_50_60   Minutes_In_HRZ_Light_60_70
+734            Minutes_In_HRZ_Moderate_70_80 Minutes_In_HRZ_Hard_80_90
+734! Minutes_In_HRZ_Very_Hard_90_Plus
+735            HR_Finish HR_Recovery_Rate_1_Min  HR_Recovery_Rate_2_Min  Recovery_Time_Seconds
+735!  Bike_Average_KPH
+736            Bike_Max_KPH  Elevation_Highest_Meters    Elevation_Lowest_Meters
+736! Elevation_Gain_Meters
+737            Elevation_Loss_Meters Wake_Up_Time :MDYAMPM20.2   Seconds_Awake
+737! Seconds_Asleep_Total    Seconds_Asleep_Restful
+738            Seconds_Asleep_Light  Wake_Ups    Seconds_to_Fall_Asleep  Sleep_Efficiency
+738! Sleep_Restoration
+739            Sleep_HR_Resting  Sleep_Auto_Detect   GW_Plan_Name    GW_Reps_Performed
+739! GW_Rounds_Performed
+740            Golf_Course_Name  Golf_Course_Par Golf_Total_Score    Golf_Par_or_Better
+740! Golf_Pace_of_Play_Minutes
+741            Golf_Longest_Drive_Yards;
+742            Sleep_Efficiency = Sleep_Efficiency/100;
+743      format Input_Date date9. Sleep_Efficiency percent8.2 ;
+744  run;
+
+NOTE: The infile "W:\My Documents\SAS Project\Activity.csv" is:
+      Filename=W:\My Documents\SAS Project\Activity.csv,
+      RECFM=V,LRECL=32767,File Size (bytes)=9297,
+      Last Modified=14Dec2015:15:45:29,
+      Create Time=14Dec2015:13:04:30
+
+NOTE: 80 records were read from the infile "W:\My Documents\SAS Project\Activity.csv".
+      The minimum record length was 80.
+      The maximum record length was 134.
+NOTE: Missing values were generated as a result of performing an operation on missing values.
+      Each place is given by: (Number of times) at (Line):(Column).
+      62 at 742:46
+NOTE: The data set HEALTH.ACTIVITY has 80 observations and 50 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.00 seconds
+
+
+745  proc contents data=health.activity;
+746  run;
+
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           0.04 seconds
+      cpu time            0.03 seconds
+
+
+
+/* 8d - Logs */
+747
+748  proc print data=health.activity; /* 8d */
+749      format Start_Time hhmm8.2 Wake_Up_Time MDYAMPM20.2;
+750  run;
+
+NOTE: There were 80 observations read from the data set HEALTH.ACTIVITY.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.21 seconds
+      cpu time            0.20 seconds
+
+
+/* 3a - Logs */ 
+751  proc print data=health.Daily; /* 3a */
+752  run;
+
+NOTE: There were 136 observations read from the data set HEALTH.DAILY.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.23 seconds
+      cpu time            0.21 seconds
+
+/* 3b - Logs */
+755  proc print data=health.Daily Split="_"; /* 3b */
+756  run;
+
+NOTE: There were 136 observations read from the data set HEALTH.DAILY.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.23 seconds
+      cpu time            0.21 seconds
+
+/* 3c - Logs */
+757  title "Sneha's Daily Activity"; /* 3c */
+758  proc print data=health.Daily Split="_";
+759  run;
+
+NOTE: There were 136 observations read from the data set HEALTH.DAILY.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.23 seconds
+      cpu time            0.23 seconds
+
+
+/* 3d - Logs */
+764  title ;
+765  footnote "Data from Sneha's Health Band";
+766  proc print data=health.Daily Split="_";
+767  run;
+
+NOTE: There were 136 observations read from the data set HEALTH.DAILY.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.23 seconds
+      cpu time            0.21 seconds
+	  
+/* 12a - Logs */
+40   data matches nonmatches(drop=Calories_Burned HR_Peak) ; /* 12a */
+41       merge health.activity (in=a) health.daily (rename= (Date=Input_Date)in=d) ;
+42       by Input_Date;
+43       if (a=1 and d=1 ) then output matches;
+44       else output nonmatches;
+45       keep Input_Date Calories_Burned HR_Peak;
+46   run;
+
+NOTE: There were 80 observations read from the data set HEALTH.ACTIVITY.
+NOTE: There were 136 observations read from the data set HEALTH.DAILY.
+NOTE: The data set WORK.MATCHES has 80 observations and 3 variables.
+NOTE: The data set WORK.NONMATCHES has 70 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.04 seconds
+      cpu time            0.01 seconds
+
+/* 12b - Logs */
+57   data merged (keep= Input_Date Duration_Seconds Calories_Burned Total_Kilometers_Moved ); /*
+57 ! 12b */
+58       merge health.activity (rename=(Seconds_Paused=Pause_Time_Sec) in=a) health.daily (rename=
+58 !  (Date=Input_Date)in=d) ;
+59       by Input_Date;
+60   run;
+
+NOTE: There were 80 observations read from the data set HEALTH.ACTIVITY.
+NOTE: There were 136 observations read from the data set HEALTH.DAILY.
+NOTE: The data set WORK.MERGED has 150 observations and 4 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.01 seconds
+
+
+/* 15a - Logs */
+66   data total; /* 15a */
+67       set health.activity;
+68       retain Total_Calories_Burned 0;
+69       Total_Calories_Burned = Total_Calories_Burned + Calories_Burned;
+70       keep Input_Date Calories_Burned Total_Calories_Burned;
+71   run;
+
+NOTE: There were 80 observations read from the data set HEALTH.ACTIVITY.
+NOTE: The data set WORK.TOTAL has 80 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.01 seconds
+
+
+/* 15b - Logs */
+77   data total_to_date; /* 15b */
+78       set health.activity;
+79       Total_Calories_Burned + Calories_Burned;
+80       keep Input_Date Calories_Burned Total_Calories_Burned;
+81   run;
+
+NOTE: There were 80 observations read from the data set HEALTH.ACTIVITY.
+NOTE: The data set WORK.TOTAL_TO_DATE has 80 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.01 seconds
+
+/* 15d - Logs */
+2    proc sort data=health.activity /* 15d */
+3        out=activity;
+4        by Event_Type Cardio_Benefit;
+5    run;
+
+NOTE: There were 80 observations read from the data set HEALTH.ACTIVITY.
+NOTE: The data set WORK.ACTIVITY has 80 observations and 50 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.04 seconds
+
+
+NOTE: This SAS session is using a registry in WORK.  All changes will be lost at the end of
+      this session.
+	  
+/* 15c - Logs */
+13   data aggregate; /* 15c */
+14       set activity;
+15       by Event_Type Cardio_Benefit;
+16       if first.Event_Type then Calorie_Count = 0;
+17       else Calorie_Count + Calories_Burned;
+18       if last.Cardio_Benefit then output;
+19   run;
+
+NOTE: There were 80 observations read from the data set WORK.ACTIVITY.
+NOTE: The data set WORK.AGGREGATE has 5 observations and 51 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+
+
+NOTE: This SAS session is using a registry in WORK.  All changes will be lost at the end of
+      this session.
+	  
+/* 21b - Logs */
+51   data health.conversion; /* 21b */
+52       set health.daily (rename=(Steps=numSteps Total_Kilometers_Moved=numTLM));
+53       Steps = put(numSteps,5.);
+54       Total_Kilometers_Moved = put(numTLM, 10.2);
+55       keep Date Steps Total_Kilometers_Moved;
+56   run;
+
+NOTE: There were 136 observations read from the data set HEALTH.DAILY.
+NOTE: The data set HEALTH.CONVERSION has 136 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.04 seconds
+	  
+/* 21a - Logs */
+58   data health.toNum (drop=charSteps charTLM); /* 21a */
+59       set health.conversion (rename=(Steps=charSteps Total_Kilometers_Moved=charTLM));
+60       Steps=input(charSteps,5.);
+61       Total_Kilometers_Moved=input(charTLM,10.2);
+62   run;
+
+NOTE: There were 136 observations read from the data set HEALTH.CONVERSION.
+NOTE: The data set HEALTH.TONUM has 136 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.03 seconds
+
+
+/* 21c - Logs */
+14
+15   data health.autoconversion; /* 21c */
+16       set health.conversion;
+17       Meters_Moved = Total_Kilometers_Moved * 1000;
+18   run;
+
+NOTE: Character values have been converted to numeric values at the places given by:
+      (Line):(Column).
+      17:20
+NOTE: There were 136 observations read from the data set HEALTH.CONVERSION.
+NOTE: The data set HEALTH.AUTOCONVERSION has 136 observations and 4 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.22 seconds
+      cpu time            0.00 seconds
+
+
+/* 21d - Logs */
+19
+20   proc contents data=health.conversion; /* 21d */
+NOTE: Writing HTML Body file: sashtml.htm
+21   run;
+
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           2.54 seconds
+      cpu time            0.48 seconds
+
+/* 18a - Logs */
+99   data health.functions;
+100      set health.activity;
+101      length Status $40.;
+102      if (Cardio_Benefit = ' ') then Status = "Lazy Sneha did not workout today!";
+103      else do;
+104          select (substr(Cardio_Benefit,1,1)); /* 18a */
+105          when ('M') Status = "Sneha worked out pretty well";
+106          when ('L') Status = "Sneha can push herself to do better";
+107          otherwise Status = "Error";
+108          end;
+109      end;
+110      keep Input_Date Cardio_Benefit Status;
+111  run;
+
+NOTE: There were 80 observations read from the data set HEALTH.ACTIVITY.
+NOTE: The data set HEALTH.FUNCTIONS has 80 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.03 seconds
+
+/* 18b - Logs */
+132  data health.functions;
+133      set health.activity;
+134      length Emoticon $11.;
+135      if (length(Event_Type)>5 or length(Event_Type)<4) then Emoticon = "Thumbs Up"; /* 18b
+135! */
+136      else Emoticon = "Thumbs Down";
+137      keep Event_Type Emoticon;
+138  run;
+
+NOTE: There were 80 observations read from the data set HEALTH.ACTIVITY.
+NOTE: The data set HEALTH.FUNCTIONS has 80 observations and 2 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.07 seconds
+      cpu time            0.00 seconds
+
+
+/* 18c - Logs */
+139  data health.functions2;
+140      set health.functions;
+141      UporDown = scan(Emoticon,2); /* 18c */
+142      Keep Event_Type UporDown;
+143  run;
+
+NOTE: There were 80 observations read from the data set HEALTH.FUNCTIONS.
+NOTE: The data set HEALTH.FUNCTIONS2 has 80 observations and 2 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.08 seconds
+      cpu time            0.00 seconds
+
+	  
+/* 18d and 18e - Logs */
+144  data health.functions3;
+145      set health.functions;
+146      low = lowcase(Event_Type); /* 18d */
+147      proper = propcase(low);   /* 18e */
+148      Keep Event_Type low proper;
+149  run;
+
+NOTE: There were 80 observations read from the data set HEALTH.FUNCTIONS.
+NOTE: The data set HEALTH.FUNCTIONS3 has 80 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.09 seconds
+      cpu time            0.00 seconds
+
+
+/* 18f - Logs */
+165  data health.functions4;
+166      set health.activity;
+167      Description = catx("-",Event_Type,Cardio_Benefit); /* 18f */
+168      keep Input_Date Description;
+169  run;
+
+NOTE: There were 80 observations read from the data set HEALTH.ACTIVITY.
+NOTE: The data set HEALTH.FUNCTIONS4 has 80 observations and 2 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.00 seconds
+
+	  
+/* 20a - Logs */
+180  data health.math;
+181      set health.daily;
+182      Kilometers_Moved = round(Total_Kilometers_Moved,0.1); /* 20a */
+183      keep Date Kilometers_Moved;
+184  run;
+
+NOTE: There were 136 observations read from the data set HEALTH.DAILY.
+NOTE: The data set HEALTH.MATH has 136 observations and 2 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.09 seconds
+      cpu time            0.01 seconds
+
+
+/* 20b - Logs */
+185  data health.math2;
+186      set health.daily;
+187      Max_Kilometers_Moved = ceil(Total_Kilometers_Moved); /* 20b */
+188      keep Date Max_Kilometers_Moved;
+189  run;
+
+NOTE: There were 136 observations read from the data set HEALTH.DAILY.
+NOTE: The data set HEALTH.MATH2 has 136 observations and 2 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.05 seconds
+      cpu time            0.01 seconds
+
+/* 20c - Logs */
+202  data health.math3;
+203      set health.activity;
+204      total_calories_burned = sum(Calories_Burned_Carbs,Calories_Burned_Fats);
+205      average_calories_burned = mean(Calories_Burned_Carbs,Calories_Burned_Fats);
+206      keep Input_Date total_calories_burned average_calories_burned;
+207  run;
+
+NOTE: Missing values were generated as a result of performing an operation on missing values.
+      Each place is given by: (Number of times) at (Line):(Column).
+      18 at 204:29   18 at 205:31
+NOTE: There were 80 observations read from the data set HEALTH.ACTIVITY.
+NOTE: The data set HEALTH.MATH3 has 80 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.01 seconds
+
+/* 20d - Logs */
+208  data health.math4;
+209      set health.activity;
+210      min_heart_rate= min(HR_Lowest,HR_Average,HR_Finish);
+211      keep Input_Date min_heart_rate;
+212  run;
+
+NOTE: Missing values were generated as a result of performing an operation on missing values.
+      Each place is given by: (Number of times) at (Line):(Column).
+      3 at 210:21
+NOTE: There were 80 observations read from the data set HEALTH.ACTIVITY.
+NOTE: The data set HEALTH.MATH4 has 80 observations and 2 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.05 seconds
+      cpu time            0.01 seconds
+
+/* 20e - Logs */
+213  data health.math5;
+214      set health.activity;
+215      number_of_missing_hr = nmiss (HR_Lowest,HR_peak,HR_Average,HR_Finish); /* 20e */
+216      keep Input_Date number_of_missing_hr;
+217  run;
+
+NOTE: There were 80 observations read from the data set HEALTH.ACTIVITY.
+NOTE: The data set HEALTH.MATH5 has 80 observations and 2 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.05 seconds
+      cpu time            0.01 seconds
+
+/* 25a,25b,25c - Logs */
+274  options symbolgen; /* 25a */
+275
+276  %put Health Data Captured from MS Band ; /* 25b */
+Health Data Captured from MS Band
+277
+278  %let a = Run; /* 25c */
+279  %let b = 20000;
+280  %let c = Good;
+281
+SYMBOLGEN:  Macro variable A resolves to Run
+282  title "&a Activity";
+283
+284  proc print data=health.activity;
+285  where Event_Type contains "&a";
+SYMBOLGEN:  Macro variable A resolves to Run
+286  run;
+
+NOTE: There were 3 observations read from the data set HEALTH.ACTIVITY.
+      WHERE Event_Type contains 'Run';
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.01 seconds
+
+
+287
+288  proc print data=health.activity;
+289  where Duration_Seconds
+SYMBOLGEN:  Macro variable B resolves to 20000
+289!                        > &b ;
+290  run;
+
+NOTE: There were 15 observations read from the data set HEALTH.ACTIVITY.
+      WHERE Duration_Seconds>20000;
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.05 seconds
+      cpu time            0.04 seconds
+
+
+291
+292  proc print data=health.activity;
+293  where Sleep_Restoration = "&c" ;
+SYMBOLGEN:  Macro variable C resolves to Good
+294  run;
+
+NOTE: There were 2 observations read from the data set HEALTH.ACTIVITY.
+      WHERE Sleep_Restoration='Good';
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.01 seconds
+
+
+
+/* 25d - Logs */
+298  %put Date is &sysdate ;
+SYMBOLGEN:  Macro variable SYSDATE resolves to 15DEC15
+Date is 15DEC15
+299  %put Last dataset &SYSLAST;
+SYMBOLGEN:  Macro variable SYSLAST resolves to HEALTH.MATH5
+Last dataset HEALTH.MATH5
+300  %put Who is working on SAS? &sysuserid;
+SYMBOLGEN:  Macro variable SYSUSERID resolves to sendait
+Who is working on SAS? sendait
+
+/* 25e - Logs */
+301  %symdel a b c; /* 25e */
+
+/* 27 - Logs */
+303  options mcompilenote = all; /* 27d */
+304  %macro daily(day); /* 27a */
+305      proc print data=health.daily;
+306          where date = &day;
+307      run;
+308  %mend; /* 27b */
+NOTE: The macro DAILY completed compilation without errors.
+      7 instructions 184 bytes.
+
+309  options mprint; /* 27c */
+310  %daily('29APR2015'd);
+MPRINT(DAILY):   proc print data=health.daily;
+SYMBOLGEN:  Macro variable DAY resolves to '29APR2015'd
+MPRINT(DAILY):   where date = '29APR2015'd;
+MPRINT(DAILY):   run;
+
+NOTE: There were 1 observations read from the data set HEALTH.DAILY.
+      WHERE date='29APR2015'D;
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.03 seconds
+
+
+
+319  %macro sleep_efficiency(wake_ups); /* 27a */
+320      proc print data=health.activity;
+321          where Wake_Ups > &wake_ups ;
+322          var Input_Date Wake_Ups Seconds_Awake Seconds_Asleep_Total Seconds_Asleep_Restful
+322! Seconds_Asleep_Light Sleep_Efficiency;
+323      run;
+324  %mend; /* 27b */
+NOTE: The macro SLEEP_EFFICIENCY completed compilation without errors.
+      7 instructions 328 bytes.
+325
+326  %sleep_efficiency(3);
+MPRINT(SLEEP_EFFICIENCY):   proc print data=health.activity;
+SYMBOLGEN:  Macro variable WAKE_UPS resolves to 3
+MPRINT(SLEEP_EFFICIENCY):   where Wake_Ups > 3 ;
+MPRINT(SLEEP_EFFICIENCY):   var Input_Date Wake_Ups Seconds_Awake Seconds_Asleep_Total
+Seconds_Asleep_Restful Seconds_Asleep_Light Sleep_Efficiency;
+MPRINT(SLEEP_EFFICIENCY):   run;
+
+NOTE: There were 8 observations read from the data set HEALTH.ACTIVITY.
+      WHERE Wake_Ups>3;
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.09 seconds
+      cpu time            0.01 seconds
+
+
+
+/* 14a,14b,14c - Logs */
+
+362  data Sleep (keep= Wake_Up_Time  Seconds_Awake   Seconds_Asleep_Total
+363                      Seconds_Asleep_Restful  Seconds_Asleep_Light
+364                      Wake_Ups    Seconds_to_Fall_Asleep  Sleep_Efficiency
+365                      Sleep_Restoration   Sleep_HR_Resting    Sleep_Auto_Detect) /* 14c */
+366      Run (keep= Duration_Seconds Calories_Burned Total_Kilometers_Moved )
+367      Exercise (keep= Start_Time  Event_Type  Duration_Seconds
+368                      Seconds_Paused  Calories_Burned Calories_Burned_Carbs
+368! Calories_Burned_Fats
+369                      HR_Lowest   HR_Peak HR_Average  UV_Exposure_Minutes Cardio_Benefit)
+370      Errored;
+371      set health.activity;
+372      select(Event_Type); /* 14 a */
+373          when ('Exercise') output Exercise; /* 14b */
+374          when ('Sleep') output Sleep;
+375          when ('Run') output Run;
+376          otherwise output Errored;
+377      end;
+378  run;
+
+NOTE: There were 80 observations read from the data set HEALTH.ACTIVITY.
+NOTE: The data set WORK.SLEEP has 18 observations and 11 variables.
+NOTE: The data set WORK.RUN has 3 observations and 3 variables.
+NOTE: The data set WORK.EXERCISE has 59 observations and 12 variables.
+NOTE: The data set WORK.ERRORED has 0 observations and 50 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.06 seconds
+
+
+379
+
+/* 14d - Logs */
+379
+380  title;
+381  proc print data=work.Exercise (firstobs=5 obs=20); /* 14d */
+382  run;
+
+NOTE: There were 16 observations read from the data set WORK.EXERCISE.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.01 seconds
+
+
+
+
+/* 9a,9b,9c,9d - Logs */
+
+29   data health.dateuse;
+30       set health.activity end=final;
+31       Birthday = mdy(03,30,1991); /* 9d */
+32       call symputx('bdy',put(Birthday,mmddyy10.));
+33       Year = year(Input_date); /* 9a */
+34       Month = month(Input_date); /* 9b */
+35       how_long_ago = today() - input_date; /* 9c */
+36       total_calories_burned + calories_burned;
+37       if final then call symputx('tcb',total_calories_burned);
+38       keep Input_Date Year Month how_long_ago;
+39   run;
+
+NOTE: There were 80 observations read from the data set HEALTH.ACTIVITY.
+NOTE: The data set HEALTH.DATEUSE has 80 observations and 4 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.07 seconds
+      cpu time            0.03 seconds
+
+
+40   footnote "Total Caloried Burned while working out : &tcb";
+41   footnote2 "Sneha has her birthday on : &bdy";
+42   proc print data=health.dateuse;
+43   run;
+
+NOTE: There were 80 observations read from the data set HEALTH.DATEUSE.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.04 seconds
+
+
+
+
+
+
+
+
+
+
+
+
+
+
